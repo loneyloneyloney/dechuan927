@@ -1,0 +1,31 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset=UTF-8 />
+    <title>yugi</title>
+    <script type="text/javascript">
+        function loadFile (file)
+        {
+            var dom = null;
+            if (document.implementation && document.implementation.createDocument)
+            {
+                dom = new window.XMLHttpRequest ();
+            }
+            else
+            {
+                dom = new ActiveXObject ("Microsoft.XMLHttp");//XMLDOM
+                // dom.async = "false";
+                //  dom.load (file);
+            }
+            dom.open ("GET", file, true);
+            dom.send (null);
+            return dom;
+        }
+        console.log (loadFile ("http://utf8.sms.webchinese.cn/?Uid=71fang&Key=2dfa3db23db2a7523091&smsMob=13433415979&smsText=验证码:8888").responseXML);
+        // 回答完毕，采纳即可。
+    </script>
+</head>
+<body>
+</body>
+</html>
